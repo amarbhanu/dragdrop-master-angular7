@@ -1,0 +1,11 @@
+<div style="display: flex">
+    <div cdkDropList [cdkDropListData]="list1" [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
+        (cdkDropListDropped)="drop($event)" style="width: 30%">
+        <div *ngFor="let list of list1" class="pop" cdkDrag>{{list}}</div>
+    </div>
+    <div cdkDropList [cdkDropListData]="list2" [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+        (cdkDropListDropped)="drop($event)" style="width: 30%">
+        <div *ngFor="let list of list2" class="pop" cdkDrag>{{list}}</div>
+    </div>
+
+</div>
